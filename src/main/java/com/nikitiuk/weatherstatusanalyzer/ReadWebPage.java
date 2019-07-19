@@ -8,15 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import com.nikitiuk.*;
 
 public class ReadWebPage {
     private static Logger logger =  LogManager.getLogger(ReadWebPage.class);
-    public static void main(String[] args) {
-        String urlText = "https://www.foreca.com/Ukraine/Odesa";
-        Map<String, Double> weatherStatus = retrieveWeatherStatus(urlText);
-        logger.info(weatherStatus.toString());
-    }
 
     public static Map<String, Double> retrieveWeatherStatus(String urlString){
         Map<String, Double> weatherStatusValues = new HashMap<>();
