@@ -9,8 +9,8 @@ import java.util.Map;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class ReadWebPage {
-    private static Logger logger =  LogManager.getLogger(ReadWebPage.class);
+public class WebPageReader {
+    private static Logger logger =  LogManager.getLogger(WebPageReader.class);
 
     public static Map<String, Double> retrieveWeatherStatus(String urlString){
         Map<String, Double> weatherStatusValues = new HashMap<>();

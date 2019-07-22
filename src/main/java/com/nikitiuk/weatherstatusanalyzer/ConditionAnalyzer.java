@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Map;
 
 public class ConditionAnalyzer {
-    private static Logger logger =  LogManager.getLogger(ReadWebPage.class);
+    private static Logger logger =  LogManager.getLogger(WebPageReader.class);
 
     public static void checkConditionsForTodayAndDisplayTheBestOption(Map<String, Double> weatherStatus){
         //logger.info(ServiceStarter.parseBoolExpr("(Visibility > 5 && Feels > 25) && (Barometer < 1100 || Temperature > 25)", weatherStatus));

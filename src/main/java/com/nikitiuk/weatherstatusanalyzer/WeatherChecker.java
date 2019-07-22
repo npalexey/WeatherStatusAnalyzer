@@ -6,11 +6,11 @@ import java.util.Map;
 import static com.nikitiuk.weatherstatusanalyzer.ConditionAnalyzer.*;
 
 public class WeatherChecker {
-    private static Logger logger =  LogManager.getLogger(ReadWebPage.class);
+    private static Logger logger =  LogManager.getLogger(WebPageReader.class);
 
     public static void main(String[] args) {
         String urlText = "https://www.foreca.com/Ukraine/Odesa";
-        Map<String, Double> weatherStatus = ReadWebPage.retrieveWeatherStatus(urlText);
+        Map<String, Double> weatherStatus = WebPageReader.retrieveWeatherStatus(urlText);
         //logger.info(weatherStatus.toString());
         checkConditionsForTodayAndDisplayTheBestOption(weatherStatus);
     }
