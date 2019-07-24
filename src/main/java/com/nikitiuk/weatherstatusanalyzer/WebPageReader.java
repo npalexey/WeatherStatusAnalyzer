@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WebPageReader {
-    private static Logger logger =  LogManager.getLogger(WebPageReader.class);
+    private static final Logger logger =  LoggerFactory.getLogger(WebPageReader.class);
 
     public static Map<String, Double> retrieveWeatherStatus(String urlString){
         Map<String, Double> weatherStatusValues = new HashMap<>();
@@ -21,6 +21,7 @@ public class WebPageReader {
 
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
+                //logger.info(inputLine);
                 matchComponentsOfWeatherStatus(inputLine, weatherStatusValues);
             }
         } catch (Exception e) {
@@ -47,7 +48,7 @@ public class WebPageReader {
         String formatted = inputLineFromSite
                 .replaceAll("\\s+|<strong>|</strong>|<br />|;|</span>|&deg|°C|%|km|hPa|\\+", "")
                 .replaceAll("<spanclass=\"warmtxt-xxlarge\">", "Temperature:");
-        //logger.info(formatted);
+        logger.info(formatted);
         if(formatted.matches("(FeelsLike).*")){
             weatherStatusValues.put("Feels", Double.parseDouble(formatted.replaceAll("FeelsLike:", "")));
         } else if(formatted.matches("(Barometer).*")){

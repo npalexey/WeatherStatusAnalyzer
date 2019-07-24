@@ -1,12 +1,12 @@
 package com.nikitiuk.weatherstatusanalyzer;
 
 import com.nikitiuk.booleanparsercontraption.service.ServiceStarter;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 public class ConditionAnalyzer {
-    private static Logger logger =  LogManager.getLogger(WebPageReader.class);
+    private static final Logger logger =  LoggerFactory.getLogger(WebPageReader.class);
 
     public static void checkConditionsForTodayAndDisplayTheBestOption(Map<String, Double> weatherStatus){
         //logger.info(ServiceStarter.parseBoolExpr("(Visibility > 5 && Feels > 25) && (Barometer < 1100 || Temperature > 25)", weatherStatus));

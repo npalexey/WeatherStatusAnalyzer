@@ -1,20 +1,20 @@
 package com.nikitiuk.weatherstatusanalyzer;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ConditionAnalyzerTest {
-    private static Logger logger = null;
+    private static Logger logger;
 
     @BeforeAll
     public static void setLogger() throws Exception
     {
-        logger = LogManager.getLogger(ConditionAnalyzer.class);
+        logger = LoggerFactory.getLogger(ConditionAnalyzer.class);
     }
     @Test
     public void compareCurrentWeatherWithTemplatesTest() {
